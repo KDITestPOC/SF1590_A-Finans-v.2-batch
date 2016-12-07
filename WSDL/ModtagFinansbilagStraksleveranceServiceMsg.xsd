@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 (x64) (http://www.altova.com) by Jesper Byrdal Kjær (Systematic A/S) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:oir="urn:oio:kl:kdi:oir:1590_A_V2" xmlns:callctx="http://serviceplatformen.dk/xml/schemas/CallContext/1/" xmlns:autctx="http://serviceplatformen.dk/xml/schemas/AuthorityContext/1/" xmlns:ns1="http://serviceplatformen.dk/xml/wsdl/soap11/OIR/ModtagFinansStraksleverance/1/" targetNamespace="http://serviceplatformen.dk/xml/wsdl/soap11/OIR/ModtagFinansStraksleverance/1/" elementFormDefault="qualified">
+	<xs:annotation>
+		<xs:documentation>Debitorrequests</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://serviceplatformen.dk/xml/schemas/CallContext/1/" schemaLocation="CallContext_1.xsd"/>
+	<xs:import namespace="http://serviceplatformen.dk/xml/schemas/AuthorityContext/1/" schemaLocation="AuthorityContext_1.xsd"/>
+	<xs:import namespace="urn:oio:kl:kdi:oir:1590_A_V2" schemaLocation="view/OIRFinansbilagLeverance.xsd"/>
+	<xs:import namespace="urn:oio:kl:kdi:oir:1590_A_V2" schemaLocation="view/FinansForretningskvittering.xsd"/>
+	<xs:element name="FinansbilagRequestType">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="autctx:AuthorityContext" minOccurs="0"/>
+				<xs:element ref="callctx:CallContext" minOccurs="0"/>
+				<xs:element ref="oir:FinansbilagLeverance"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FinansbilagResponseType">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="oir:FinansForretningskvittering"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

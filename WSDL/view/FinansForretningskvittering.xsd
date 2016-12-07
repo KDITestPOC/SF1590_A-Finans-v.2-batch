@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2015 rel. 3 (x64) (http://www.altova.com) by Eskild Nejsum (KOMBIT A/S) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:oir="urn:oio:kl:kdi:oir:1590_A_V2" targetNamespace="urn:oio:kl:kdi:oir:1590_A_V2" elementFormDefault="qualified">
+	<xs:annotation>
+		<xs:documentation>ForretningsKvittering for en eller flere finansposteringer.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/FinansKvittering.xsd"/>
+	<xs:include schemaLocation="../class/FinansLeverancedata.xsd"/>
+	<xs:include schemaLocation="../class/Finansbilag.xsd"/>
+	<xs:include schemaLocation="../class/Posteringsdata.xsd"/>
+	<xs:element name="FinansForretningskvittering">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="oir:FinansKvitteringTransaktionsID"/>
+				<xs:element ref="oir:FinansKvitteringRegistreringstidspunkt"/>
+				<xs:element ref="oir:FinansLeverancedataAfgivendeMyndighed"/>
+				<xs:element ref="oir:FinansLeverancedataBogforingsansvarligMyndighed"/>
+				<xs:element ref="oir:FinansLeverancedataAfgivendeITSystem"/>
+				<xs:element ref="oir:FinansKvitteringBogforingsITSystem"/>
+				<xs:element ref="oir:FinansKvitteringAntalKvitteringer"/>
+				<xs:element name="LeveranceBilagValg">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="FinansLeveranceKvittering" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="oir:FinansLeverancedataTransaktionsID"/>
+										<xs:element ref="oir:FinansKvitteringValideringstidspunkt"/>
+										<xs:element ref="oir:FinansKvitteringResultat"/>
+										<xs:element ref="oir:FinansKvitteringBegrundelse"/>
+										<xs:element name="FejlAarsag" minOccurs="1" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="oir:FinansKvitteringAarsag"/>
+													<xs:element name="LokalFejl" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="oir:FinansKvitteringFejlkode"/>
+																<xs:element ref="oir:FinansKvitteringFejltekst" minOccurs="0"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Bilagsinformation" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="oir:FinansbilagUnikIdentifikation"/>
+										<xs:element name="BilagsKvittering" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="oir:FinansLeverancedataTransaktionsID"/>
+													<xs:element ref="oir:FinansKvitteringValideringstidspunkt"/>
+													<xs:element ref="oir:FinansKvitteringResultat"/>
+													<xs:element ref="oir:FinansKvitteringBegrundelse"/>
+													<xs:element name="FejlAarsag" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="oir:FinansKvitteringAarsag"/>
+																<xs:element name="LokalFejl" minOccurs="0" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element ref="oir:FinansKvitteringFejlkode"/>
+																			<xs:element ref="oir:FinansKvitteringFejltekst" minOccurs="0"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Posteringsdata" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="oir:FinansLeverancedataTransaktionsID"/>
+													<xs:element ref="oir:PosteringsdataUnikIdentifikation"/>
+													<xs:element ref="oir:FinansKvitteringValideringstidspunkt"/>
+													<xs:element ref="oir:FinansKvitteringResultat"/>
+													<xs:element ref="oir:FinansKvitteringBegrundelse" minOccurs="0"/>
+													<xs:element name="FejlAarsag" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="oir:FinansKvitteringAarsag"/>
+																<xs:element name="LokalFejl" minOccurs="0" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element ref="oir:FinansKvitteringFejlkode"/>
+																			<xs:element ref="oir:FinansKvitteringFejltekst" minOccurs="0"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
