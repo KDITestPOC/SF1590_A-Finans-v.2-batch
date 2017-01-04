@@ -1,0 +1,21 @@
+<ns2:FileMetadata xmlns:ns2="http://serviceplatformen.dk/xml/wsdl/soap11/SFTP/1/types">
+    <FileTransferUUID>8c7126b6-6370-4edb-86b3-14cd47ee17f8</FileTransferUUID>
+    <FileDescriptor>
+        <FileName>OPUS_OEKONOMI_FINANSKVITTERINGER_a0369f5bcea51ee6b4cd66161c1ebb35_55133018.xml</FileName>
+        <SizeInBytes>4445</SizeInBytes>
+        <Sender>SP_OIR_TRANSFER</Sender>
+        <SendersFileId>Finanspostering - Forretningskvittering</SendersFileId>
+        <Recipients>Testtool02</Recipients>
+    </FileDescriptor>
+    <FileContentDescriptor>
+        <SFTPDynamicRoutingInfo xmlns:ns1="http://serviceplatformen.dk/xml/wsdl/soap11/SFTP/1/types" xmlns:ns3="##default">
+            <InfRef>SF1590_A_IF04</InfRef>
+            <SenderIt-system>e5ff7930-ccf4-4d2e-a450-b3f023e9d4c9</SenderIt-system>
+            <SenderAuthority>urn:oio:cvr-nr:55133018</SenderAuthority>
+            <TransactionId>a0369f5b-cea5-1ee6-b4cd-66161c1e9b35</TransactionId>
+            <SenderTimestamp>2017-01-04T10:47:30Z</SenderTimestamp>
+            <RecipientIt-system>6cfc6b02-25c9-45b6-894a-6f1aab52c9e9</RecipientIt-system>
+            <RecipientAuthority>urn:oio:cvr-nr:55133018</RecipientAuthority>
+        </SFTPDynamicRoutingInfo>
+    </FileContentDescriptor>
+</ns2:FileMetadata>
